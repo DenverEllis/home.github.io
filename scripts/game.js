@@ -1,9 +1,16 @@
 //-------------------------------------------------------------------------//
+//Global Vars
+//-------------------------------------------------------------------------//
+//Inventories
+var ryanInven = [];
+var cecilyInven = [];
+var denverInven = [];
+var sunnyInven = [];
+
+
+//-------------------------------------------------------------------------//
 //Classes
 //-------------------------------------------------------------------------//
-
-
-
 /** Character Object Class
  * @param name: sets the name of the character
  * @param hp: default hp is 20
@@ -52,6 +59,10 @@ class Character {
         if (this._hp > 20) {
             this._hp = 20;
         }
+        if (this._hp <= 0) {
+            this._hp = 0;
+            this._disabled = true;
+        }
         return this._hp;
     }
 
@@ -60,6 +71,10 @@ class Character {
         this._sp = tSP + cSP;
         if (this._sp > 40) {
             this._sp = 40;
+        }
+        if (this._sp < 0) {
+            this._sp = 0;
+            this._loseTurn = true;
         }
         return this._sp; //should always be int
     }
@@ -100,6 +115,70 @@ class Resource {
         this.cHP = cHP;
         this.cSP = cSP;
     }
+
+    appendRyan(name) {
+        return ryanInven.push(name);
+    }
+
+    appendCecily(name) {
+        return cecilyInven.push(name);
+    }
+
+    appendDenver(name) {
+        return denverInven.push(name);
+    }
+
+    appendSunny(name) {
+       return sunnyInven.push(name);
+    }
+
+    removeRyan(name) {
+        var i;
+        var index
+        for (i=0; i<ryanInven.length; ++i) {
+            if (ryanInven[i] == name) {
+                index = i;
+                break;
+            }
+        }
+        return ryanInven.splice(index, 1);
+    }
+
+    removeCecily(name) {
+        var i;
+        var index;
+        for (i=0; i<cecilyInven.length; ++i) {
+            if (cecilyInven.length; ++i) {
+                index = i;
+                break;
+            }
+        }
+        return cecilyInven.splice(index, 1);
+    }
+
+    removeDenver(name) {
+        var i;
+        var index;
+        for (i=0; i<denverInven.length; ++i) {
+            if (denverInven.length; ++i) {
+                index = i;
+                break;
+            }
+        }
+        return denverInven.splice(index, 1);
+    }
+    
+    removeSunny(name) {
+        var i;
+        var index;
+        for (i=0; i<sunnyInven.length; ++i) {
+            if (sunnyInven.length; ++i) {
+                index = i;
+                break;
+            }
+        }
+        return sunnyInven.splice(index, 1);
+    }
 }
 
 
@@ -112,9 +191,6 @@ cecily = new Character("Cecily");
 denver = new Character("Denver");
 sunny = new Character("Sunny");
 
-/*
-class ChanceCard {
-    constructor(name, cHP, cSP, loseTurn, effect, turnCount, resource) */
 //Chance Cards
 findFountainOfYouth = new ChanceCard("Found Fountain Of Youth", 0, 40, false, "none", 0, "none", 0);
 findHolyGrail = new ChanceCard("Found Holy Grail", 20, 0, false, "none", 0, "none", 0);
@@ -131,7 +207,15 @@ bearAttackWeapon = new ChanceCard("Bear Attack", -2, 0, false, "none", 0, "event
 bearAttack = new ChanceCard("Bear Attack", -4, 0, false, "none", 0, "none", 0);
 TigerAttackWeapon = new ChanceCard("Tiger Attack", -2, 0, false, "none", 0, "event", 0);
 TigerAttack = new ChanceCard("Tiger Attack", -4, 0, false, "none", 0, "none", 0);
-stubToe
+stubToe = new ChanceCard("Stubbed Toe", -1, 0, false, "none", 0, "none", 0);
+poisonIvy = new ChanceCard("Poison Ivy", -1, 0, false, "sick", 3, "none", 0);
+snakeBite = new ChanceCard("Snake Bite", -2, 0, false, "sick", 3, "none", 0);
+quickSand = new ChanceCard("Quick Sand", 0, 0, true, "none", 0, "none", 0);
+seaUrchin = new ChanceCard("Stepped on a Sea Urchin", -2, 0 , "sick", 3, "none", 0);
+waspSting = new ChanceCard("Wasp Sting", -2, 0, false, "none", 0, "none", 0);
+commonCold = new ChanceCard("Common Cold", -1, 0, false, "sick", 2, "none", 0);
+cocoTrauma = new ChanceCard("Coconut falls on your head", -2, 0, true, "none", 0, "none", 0);
+pitFall = new ChanceCard("Fall In A Pit", -1, 0, true, "none", 0, "none", 0); 
 
 
 //-------------------------------------------------------------------------//
