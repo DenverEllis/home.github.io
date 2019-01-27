@@ -1,0 +1,181 @@
+* To Do List
+** DONE Make Character Sheets
+** DONE Figure out functions states stuff
+** TODO Story
+   Players ship wreck, separated to different sections of the map. They meet in
+   the middle at a light house or temple in the middle of the map. Survival is
+   the goal as they try to escape....
+** TODO Map
+*** Sections:
+    - Forest
+    - Lagoon
+    - Swamp
+    - Desert
+** TODO Web Stuff
+*** TODO Java Script Stuff
+    - [ ] Card functions
+    - [ ] Die functions
+    - [ ] Health and stamina functions
+    - [ ] Game page functionality
+*** TODO Styling
+    - [ ] Game page styling
+    - [ ]Index page styling
+    - [ ] FTP styling
+*** TODO Index Page
+*** TODO FTP Things
+*** TODO Cards
+    - [ ] Design
+    - [ ] Style
+    - [ ] Animate
+    - [ ] Program
+* Stats and Stuff
+** Health
+   - Start 20/20
+   - Healing with resources like food
+   - When empty stuck until party member can assist
+     - Party member assist grants like +2/20
+       - Mercy 3 turns
+   - Health is lost by events and residual effects.
+     - Events and effects by spaces and trouble cards.
+** Stamina
+   - Start 40/40
+   - Decreases with each turns
+     - When empty, lose a turn.
+      - Small amount of stamina is restored on a lost turn
+     - can be replenished by skipping a turn to rest
+       - This allows a full restore, but running out and losing a turn does not.
+     - Can be replenished with food or other items
+** Cards
+*** Chance
+**** Good
+     - Find fountain of youth
+       - Full stamina restore
+     - Find Holy Grail
+       - Full health restore
+     - Find corpse
+       - +1 resource
+     - Find box
+       - +2 resource
+     - Find knife: w
+       - pull knife from weapon pool
+     - Find gun: w
+       - pull gun from weapon pool
+     - Find spoon: w
+       - pull spoon from weapon pool
+     - Find magic elixer
+       - +(1/2) total health
+       - +(1/2) total stamina
+     - Find Excalibur: w
+       - Pull Excalibur from weapon pool.
+     - Find abandoned campsite
+       - enables the ability to cook 1 food item of choosing
+**** Bad
+     - Swarm of bees
+       - minus 1 hp
+     - Bear attack
+       - No weapon equipped
+         - minus 4 hp
+       - Weapon equipped
+         - minus 2 hp
+         - plus 1 meat
+     - Tiger attack
+       - No weapon equipped
+         - minus 4 hp
+       - Weapon equipped
+         - minus 2 hp
+         - plus 1 meat
+     - Stub toe
+       - minus 1 health
+     - Poison Ivy
+       - effect over time
+       - initial damage of minus 1 hp
+       - minus 1 hp per turn
+         - Max of three turns after initial
+       - Can not be healed
+     - Snake Bite
+       - effect over time
+       - initial damage of minus 2 hp
+       - minus 2 hp per turn
+         - max of three turns after initial
+       - Can be healed with medicine, but does not negate the initial damage
+     - Quick sand
+       - Lose a turn
+     - Stepped on a sea urchin
+       - over time effect
+       - initial damage of minus 2 hp
+       - minus 2 hp per turn
+         - max of 3 turns after initial
+       - Can be healed with medicine, but does not negate the initial damage
+     - Wasp sting
+       - minus 2hp
+     - Common cold
+       - effect over time
+       - minus 1hp per turn
+         - max of 2 turns
+       - Can be healed with medicine.
+     - Coconut falls on your head
+       - minus 2hp
+       - lose a turn
+     - Fall in a pit
+       - lose a turn
+*** Resource
+    - Coconut
+      - +(1/4) total stamina
+    - Banana
+      - +(1/2) total stamina
+    - Fish
+**** Weapon Pool (triggered by chance card)
+     - Find knife
+     - Find gun
+     - Find spoon
+* Diversifyers
+** Confirmed
+   - Puzzle design challenge: Make your game around, or inspired by a real world
+     toy you have played with in your lifetime. (For more information, see here)
+   - Use the Source, Luke: Use one or more open source tools, game engines or
+     libraries in your game (and thank them in in the Technology Notes section
+     on the submission page).
+   - Mixed Media - Make a physical game that utilises computer code.
+   - Under the Hood - Make some or all of the code visible in your game.
+   - In a webpage - Your gameplay is hidden in a seemingly normal web page.
+   - Happy Anniversary - Your game should incorporate 2018's theme
+     (Transmission) as well as 2019's theme.
+
+** Considering
+   - Forgive and Fortify: Create a game that explores how forgiveness
+     strengthens those who practice it. (Forgiveness kits in English, Spanish,
+     Chinese and Arabic)
+   - Language-Independence: Create a game that can be understood regardless of
+     which language the player speaks
+   - Celestial - An option to adjust game speed is included
+   - Assetless - Create all visuals programmatically or in the scene editor, and
+     avoid any importing of image files, sprite sheets, 3D models etc.
+   - The Guide I was looking for - Your game has a supplementary guide, using a
+     different medium than the game itself, that players must refer to to beat the game.
+* Site Map:
+  - index.html
+    - Download Page
+      - Downloadable Files:
+        - The game map (preferably as a pdf)
+        - Character 3D Models (probably as an STL) (x4)
+        - Non-3d characters (probs as a pdf) (x4)
+    - Game Page
+      - Contains:
+        - Instructions through an alert
+
+
+* Implementation notes
+  - Function dictating over time effects
+  - Individual card function that calls effect functions
+  - subtract/add health function
+  - subtract/add stamina function
+  - Lose turn state change function
+  - start of a turn, check conditions and display message accordingly
+  - Buttons call a dice roll function (and a card draw or maybe auto)
+  - Card effects show a JS alert of the effects
+
+** Variables
+   - Lose a turn
+   - Incapacitation
+   - Health
+   - Stamina
