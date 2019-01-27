@@ -128,6 +128,8 @@
      - Find knife
      - Find gun
      - Find spoon
+     - Find Excalibur
+     - Meat
 * Diversifyers
 ** Confirmed
    - Puzzle design challenge: Make your game around, or inspired by a real world
@@ -173,6 +175,7 @@
   - start of a turn, check conditions and display message accordingly
   - Buttons call a dice roll function (and a card draw or maybe auto)
   - Card effects show a JS alert of the effects
+  - *EFFECTS INCLUDE SICK AND COOK*
 
 ** Variables
    - Lose a turn
