@@ -22,13 +22,13 @@ var sunnyInven = [];
  *                  loses turn.
  */
 class Character {
-    constructor(name) {
-        this.name = name;
-        hp = 20;
-        sp = 40;
-        loseTurn = false;
-        disabled = false;
-        weapon = false;
+    constructor(name, hp, sp, loseTurn, disabled, weapon) {
+        this._name = name;
+        this._hp = hp;
+        this._sp = sp;
+        this._loseTurn = loseTurn;
+        this._disabled = disabled;
+        this._weapon = weapon;
     }
 
     //getters, retrun value of the property
@@ -52,9 +52,18 @@ class Character {
         return this._disabled;
     }
 
+    get weapon() {
+        return this._weapon;
+    }
+
     //setters, change and return value of property
+    set name(value) {
+        this._name = value
+        return this._name; //Should always be a string.
+    }
+    
     set hp(cHP) {
-        tHP = this._hp;
+        var tHP = this._hp;
         this._hp = tHP + cHP;
         if (this._hp > 20) {
             this._hp = 20;
@@ -67,7 +76,7 @@ class Character {
     }
 
     set sp(cSP) {
-        tSP = this._sp;
+        var tSP = this._sp;
         this._sp = tSP + cSP;
         if (this._sp > 40) {
             this._sp = 40;
@@ -80,11 +89,18 @@ class Character {
     }
 
     set loseTurn(value) {
-        return this._loseTurn = value; //should always be bool
+        this._loseTurn = value;
+        return this._loseTurn; //should always be bool
     }
 
     set disabled(value) {
-        return this._disabled = value //should always be bool
+        this._disabled = value;
+        return this._disabled; //should always be bool
+    }
+
+    set weapon(value) {
+        this._weapon = value;
+        return this._weapon; //should always be bool;
     }
 }
 
@@ -148,7 +164,7 @@ class Resource {
         var i;
         var index;
         for (i=0; i<cecilyInven.length; ++i) {
-            if (cecilyInven.length; ++i) {
+            if (cecilyInven[i] == name) {
                 index = i;
                 break;
             }
@@ -160,7 +176,7 @@ class Resource {
         var i;
         var index;
         for (i=0; i<denverInven.length; ++i) {
-            if (denverInven.length; ++i) {
+            if (denverInven[i] == name) {
                 index = i;
                 break;
             }
@@ -172,7 +188,7 @@ class Resource {
         var i;
         var index;
         for (i=0; i<sunnyInven.length; ++i) {
-            if (sunnyInven.length; ++i) {
+            if (sunnyInven[i] == name) {
                 index = i;
                 break;
             }
@@ -186,10 +202,10 @@ class Resource {
 //Objects
 //-------------------------------------------------------------------------//
 // Players
-ryan = new Character("Ryan");
-cecily = new Character("Cecily");
-denver = new Character("Denver");
-sunny = new Character("Sunny");
+ryan = new Character("Ryan", 20, 40, false, false, false);
+cecily = new Character("Cecily", 20, 40, false, false, false);
+denver = new Character("Denver", 20, 40, false, false, false);
+sunny = new Character("Sunny", 20, 40, false, false, false);
 
 //Chance Cards
 findFountainOfYouth = new ChanceCard("Found Fountain Of Youth", 0, 40, false, "none", 0, "none", 0);
