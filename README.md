@@ -1,3 +1,8 @@
+# Preface
+This repository was created to host the files for the 2018 GMTK Game Jam. Due to unforeseen circumstances, the game was rendered incomplete. This repository is still existant in the event I come and return to complete this small project. 
+
+The game was meant to be a webapp and this document served to organize the thoughts of the team members. This was a good learning experience for everyone on the team to familiarize themselves with git.
+
 # Table of Contents
 
 1.  [To Do List](#orgef8b99b)
